@@ -292,7 +292,12 @@
       });
 
       select.addEventListener('change', (e) => {
-        if (e.target.value) loadSchedule(e.target.value);
+        if (e.target.value) {
+          // Update URL hash with schedule basename
+          const basename = e.target.value.replace('schedules/', '').replace('.json', '');
+          history.pushState(null, '', `#${basename}`);
+          loadSchedule(e.target.value);
+        }
       });
     }
 
@@ -500,7 +505,23 @@
       `;
     }
 
+    // Initialize: populate selector and check URL for schedule
     populateSelector();
+    
+    // Load schedule from URL hash if present
+    function loadFromHash() {
+      const hash = window.location.hash.slice(1); // Remove #
+      if (hash) {
+        const path = `schedules/${hash}.json`;
+        if (SCHEDULE_FILES.includes(path)) {
+          document.getElementById('schedule-select').value = path;
+          loadSchedule(path);
+        }
+      }
+    }
+    
+    loadFromHash();
+    window.addEventListener('hashchange', loadFromHash);
   </script>
 </body>
 </html>
