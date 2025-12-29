@@ -113,49 +113,115 @@
       background: var(--bg-card);
     }
 
-    /* Weekly grid layout */
+    /* Timeline-style weekly grid layout */
     .week-grid {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 0.75rem;
+      grid-template-columns: 50px repeat(7, 1fr);
+      gap: 2px;
       max-width: 1400px;
       margin: 0 auto;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .time-column {
+      background: var(--bg-card);
+      position: relative;
+    }
+
+    .time-label {
+      position: absolute;
+      right: 4px;
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      transform: translateY(-50%);
     }
 
     .day-column {
       background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      min-height: 400px;
+      position: relative;
+      min-height: 800px;
     }
 
     .day-header {
       background: var(--accent-blue);
       color: white;
-      padding: 0.75rem;
+      padding: 0.5rem;
       text-align: center;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .time-header {
+      background: var(--bg-card);
+      padding: 0.5rem 0.25rem;
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
     }
 
     .day-events {
-      padding: 0.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      position: relative;
+      height: calc(100% - 34px);
     }
 
     .event-card {
-      background: var(--bg-card);
-      border-radius: 8px;
-      padding: 0.6rem;
-      border-left: 3px solid var(--accent-purple);
-      font-size: 0.8rem;
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      padding: 0.35rem 0.4rem;
+      border-left: 3px solid #64748b;
+      font-size: 0.7rem;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      z-index: 1;
     }
 
+    .event-card:hover {
+      z-index: 5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      filter: brightness(0.95);
+    }
+
+    /* Event type colors */
     .event-card.swim {
-      border-left-color: var(--accent-blue);
+      background: #dbeafe;
+      border-left-color: #3b82f6;
+    }
+    .event-card.pilates {
+      background: #fae8ff;
+      border-left-color: #c026d3;
+    }
+    .event-card.yoga {
+      background: #dcfce7;
+      border-left-color: #16a34a;
+    }
+    .event-card.cycling {
+      background: #ffedd5;
+      border-left-color: #ea580c;
+    }
+    .event-card.cardio {
+      background: #fee2e2;
+      border-left-color: #dc2626;
+    }
+    .event-card.strength {
+      background: #fef3c7;
+      border-left-color: #ca8a04;
+    }
+    .event-card.dance {
+      background: #ede9fe;
+      border-left-color: #7c3aed;
+    }
+    .event-card.gentle {
+      background: #f0fdfa;
+      border-left-color: #14b8a6;
     }
 
     .event-activity {
@@ -462,18 +528,48 @@
       return events;
     }
 
-    // Render the weekly grid
+    // Timeline constants - schedule runs 7:00 to 21:00 (14 hours)
+    const TIMELINE_START = 7; // 7:00 AM
+    const TIMELINE_END = 21;  // 9:00 PM
+    const TIMELINE_HOURS = TIMELINE_END - TIMELINE_START;
+
+    // Convert time string "HH:MM" to decimal hours from timeline start
+    function timeToPosition(timeStr) {
+      if (!timeStr) return 0;
+      const [h, m] = timeStr.split(':').map(Number);
+      return ((h + m/60) - TIMELINE_START) / TIMELINE_HOURS * 100;
+    }
+
+    // Calculate height percentage based on duration
+    function getDurationHeight(start, end) {
+      if (!start || !end) return 5; // minimum height
+      const [sh, sm] = start.split(':').map(Number);
+      const [eh, em] = end.split(':').map(Number);
+      const duration = (eh + em/60) - (sh + sm/60);
+      return Math.max(duration / TIMELINE_HOURS * 100, 2); // minimum 2%
+    }
+
+    // Render the weekly timeline grid
     function renderWeek() {
       const content = document.getElementById('content');
       let html = '<div class="week-grid">';
 
+      // Time column with hour labels
+      html += '<div class="time-column"><div class="time-header">Time</div>';
+      for (let h = TIMELINE_START; h <= TIMELINE_END; h++) {
+        const top = ((h - TIMELINE_START) / TIMELINE_HOURS) * 100;
+        html += `<div class="time-label" style="top: calc(34px + ${top}%)">${h}:00</div>`;
+      }
+      html += '</div>';
+
+      // Day columns
       DAY_ORDER.forEach(day => {
         const events = getEventsForDay(day);
         html += `
           <div class="day-column">
-            <div class="day-header">${day}</div>
+            <div class="day-header">${day.slice(0, 3)}</div>
             <div class="day-events">
-              ${events.length > 0 ? events.map(renderEvent).join('') : '<p style="color: #94a3b8; font-size: 0.8rem; padding: 0.5rem;">No events</p>'}
+              ${events.map(e => renderEvent(e)).join('')}
             </div>
           </div>
         `;
@@ -484,23 +580,47 @@
     }
 
     function renderEvent(event) {
-      const isSwim = event.activity.toLowerCase().includes('swim') || event.activity.toLowerCase().includes('aquafit');
-      const intensityClass = event.intensity ? `intensity-${event.intensity.toLowerCase()}` : '';
+      const name = event.activity.toLowerCase();
       
-      let details = '';
-      if (event.location) details += `<span>📍${event.location}</span>`;
-      if (event.instructor) details += `<span>👤${event.instructor}</span>`;
-      if (event.intensity) details += `<span class="${intensityClass}">${event.intensity}</span>`;
-      if (event.lanes) details += `<span>🏊${event.lanes} lanes</span>`;
-
-      // Format time display
-      const timeDisplay = event.start && event.end ? `${event.start} - ${event.end}` : '';
+      // Determine event type for styling
+      let eventType = '';
+      if (name.includes('swim') || name.includes('aquafit')) {
+        eventType = 'swim';
+      } else if (name.includes('pilates')) {
+        eventType = 'pilates';
+      } else if (name.includes('yoga') || name.includes('yin')) {
+        eventType = 'yoga';
+      } else if (name.includes('cycling') || name.includes('hiit cycling')) {
+        eventType = 'cycling';
+      } else if (name.includes('cardio') || name.includes('bootcamp') || name.includes('metafit') || name.includes('hiit')) {
+        eventType = 'cardio';
+      } else if (name.includes('sculpt') || name.includes('strength') || name.includes('core') || name.includes('circuit')) {
+        eventType = 'strength';
+      } else if (name.includes('zumba') || name.includes('dance')) {
+        eventType = 'dance';
+      } else if (name.includes('gentle') || name.includes('toning')) {
+        eventType = 'gentle';
+      }
+      
+      // Calculate position and size
+      const top = timeToPosition(event.start);
+      const height = getDurationHeight(event.start, event.end);
+      
+      // Short name for compact display
+      let shortName = event.activity;
+      if (shortName.length > 15) {
+        shortName = shortName.slice(0, 14) + '…';
+      }
+      
+      // Time display with start and end
+      const timeDisplay = event.start && event.end ? `${event.start}-${event.end}` : (event.start || '');
 
       return `
-        <div class="event-card ${isSwim ? 'swim' : ''}">
-          <div class="event-activity">${event.activity}</div>
+        <div class="event-card ${eventType}" 
+             style="top: ${top}%; height: ${height}%;"
+             title="${event.activity} ${event.start}-${event.end}${event.location ? ' @ ' + event.location : ''}${event.instructor ? ' with ' + event.instructor : ''}">
+          <div class="event-activity">${shortName}</div>
           <div class="event-time">${timeDisplay}</div>
-          ${details ? `<div class="event-details">${details}</div>` : ''}
         </div>
       `;
     }
