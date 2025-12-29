@@ -614,11 +614,15 @@
       // Day columns
       DAY_ORDER.forEach(day => {
         const events = getEventsForDay(day);
+        
+        // Calculate overlap groups for horizontal positioning
+        const positioned = calculateOverlaps(events);
+        
         html += `
           <div class="day-column">
             <div class="day-header">${day.slice(0, 3)}</div>
             <div class="day-events">
-              ${events.map(e => renderEvent(e)).join('')}
+              ${positioned.map(e => renderEvent(e)).join('')}
             </div>
           </div>
         `;
@@ -626,6 +630,51 @@
 
       html += '</div>';
       content.innerHTML = html;
+    }
+
+    // Detect overlapping events and assign horizontal positions
+    function calculateOverlaps(events) {
+      if (!events.length) return events;
+      
+      // Parse time to minutes for comparison
+      const toMinutes = (t) => {
+        if (!t) return 0;
+        const [h, m] = t.split(':').map(Number);
+        return h * 60 + m;
+      };
+      
+      // Add position info to each event
+      const result = events.map(e => ({
+        ...e,
+        startMin: toMinutes(e.start),
+        endMin: toMinutes(e.end),
+        column: 0,
+        totalColumns: 1
+      }));
+      
+      // Find overlapping groups
+      for (let i = 0; i < result.length; i++) {
+        const overlaps = [i];
+        
+        for (let j = 0; j < result.length; j++) {
+          if (i === j) continue;
+          // Check if events overlap
+          if (result[i].startMin < result[j].endMin && result[i].endMin > result[j].startMin) {
+            overlaps.push(j);
+          }
+        }
+        
+        // Assign columns to overlapping events
+        if (overlaps.length > 1) {
+          overlaps.sort((a, b) => result[a].startMin - result[b].startMin || a - b);
+          overlaps.forEach((idx, col) => {
+            result[idx].column = col;
+            result[idx].totalColumns = Math.max(result[idx].totalColumns, overlaps.length);
+          });
+        }
+      }
+      
+      return result;
     }
 
     function renderEvent(event) {
@@ -680,10 +729,14 @@
       
       // Clean activity name (remove "(City)" suffix)
       const displayName = event.activity.replace(/\s*\(City\)/i, '');
+      
+      // Horizontal positioning for overlapping events
+      const width = event.totalColumns > 1 ? (100 / event.totalColumns) : 100;
+      const left = event.column * width;
 
       return `
         <div class="event-card ${eventType}" 
-             style="top: ${top}%; height: ${height}%;"
+             style="top: ${top}%; height: ${height}%; left: ${left}%; width: calc(${width}% - 4px);"
              title="${event.activity} ${event.start}-${event.end}${event.location ? ' @ ' + event.location : ''}${event.instructor ? ' with ' + event.instructor : ''}">
           <div class="event-activity">${displayName}</div>
           <div class="event-time">${timeDisplay}${extras.length ? ' ' + extras.join(' ') : ''}</div>
