@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YMCA Schedule Viewer</title>
+  <style>
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #334155;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-blue: #3b82f6;
+      --accent-green: #22c55e;
+      --accent-yellow: #eab308;
+      --accent-red: #ef4444;
+      --accent-purple: #a855f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1a2e 100%);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .schedule-meta {
+      text-align: center;
+      background: var(--bg-secondary);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .schedule-meta h2 {
+      color: var(--accent-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .schedule-meta p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .file-selector {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .file-selector select {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 2px solid var(--accent-blue);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .file-selector select:hover {
+      background: var(--bg-card);
+    }
+
+    .section {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .section h3 {
+      color: var(--accent-purple);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--bg-card);
+    }
+
+    .section-note {
+      color: var(--accent-yellow);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .event-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .event-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .event-day {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-blue);
+      margin-bottom: 0.25rem;
+    }
+
+    .event-activity {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-time {
+      color: var(--accent-green);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .event-details {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .event-details span {
+      display: inline-block;
+      margin-right: 0.75rem;
+    }
+
+    .intensity-high { color: var(--accent-red); }
+    .intensity-moderate { color: var(--accent-yellow); }
+    .intensity-low { color: var(--accent-green); }
+
+    .loading {
+      text-align: center;
+      color: var(--text-secondary);
+      padding: 3rem;
+    }
+
+    .error {
+      text-align: center;
+      color: var(--accent-red);
+      padding: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+    }
+
+    /* Day grouping within sections */
+    .day-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .day-header {
+      color: var(--accent-blue);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      padding-left: 0.5rem;
+      border-left: 3px solid var(--accent-blue);
+    }
+  </style>
+</head>
+<body>
+  <h1>🏊 YMCA Schedule Viewer</h1>
+  <p class="subtitle">Sanity check for extracted schedule data</p>
+
+  <div class="file-selector">
+    <select id="schedule-select">
+      <option value="">Loading schedules...</option>
+    </select>
+  </div>
+
+  <div id="schedule-meta" class="schedule-meta" style="display: none;"></div>
+  <div id="content">
+    <p class="loading">Select a schedule to view...</p>
+  </div>
+
+  <script>
+    // List of available schedule JSON files
+    // Add new schedules here as they're created
+    const SCHEDULE_FILES = [
+      'schedules/2026-q1-group-swim.json'
+    ];
+
+    const DAY_ORDER = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+    // Populate the schedule selector dropdown
+    function populateSelector() {
+      const select = document.getElementById('schedule-select');
+      select.innerHTML = '<option value="">-- Select a schedule --</option>';
+      
+      SCHEDULE_FILES.forEach(file => {
+        const option = document.createElement('option');
+        option.value = file;
+        // Extract a friendly name from the filename
+        const name = file.replace('schedules/', '').replace('.json', '').replace(/-/g, ' ').toUpperCase();
+        option.textContent = name;
+        select.appendChild(option);
+      });
+
+      select.addEventListener('change', (e) => {
+        if (e.target.value) {
+          loadSchedule(e.target.value);
+        }
+      });
+    }
+
+    // Load and display a schedule JSON file
+    async function loadSchedule(path) {
+      const content = document.getElementById('content');
+      const metaDiv = document.getElementById('schedule-meta');
+      
+      content.innerHTML = '<p class="loading">Loading schedule...</p>';
+      metaDiv.style.display = 'none';
+
+      try {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error(`Failed to load ${path}`);
+        
+        const data = await response.json();
+        displaySchedule(data);
+      } catch (error) {
+        content.innerHTML = `<p class="error">Error loading schedule: ${error.message}</p>`;
+      }
+    }
+
+    // Display schedule data
+    function displaySchedule(data) {
+      const content = document.getElementById('content');
+      const metaDiv = document.getElementById('schedule-meta');
+
+      // Display metadata
+      if (data.schedule) {
+        metaDiv.style.display = 'block';
+        metaDiv.innerHTML = `
+          <h2>${data.schedule.season || 'Schedule'}</h2>
+          <p><strong>Source:</strong> ${data.schedule.source || 'N/A'}</p>
+          <p><strong>Dates:</strong> ${data.schedule.start_date} to ${data.schedule.end_date}</p>
+          ${data.schedule.notes ? `<p style="margin-top: 0.5rem; font-style: italic;">${data.schedule.notes}</p>` : ''}
+        `;
+      }
+
+      // Display sections
+      let html = '';
+      if (data.sections && data.sections.length > 0) {
+        data.sections.forEach(section => {
+          html += renderSection(section);
+        });
+      } else {
+        html = '<p class="error">No sections found in this schedule.</p>';
+      }
+
+      content.innerHTML = html;
+    }
+
+    // Render a section with events grouped by day
+    function renderSection(section) {
+      let html = `<div class="section">
+        <h3>${section.name}</h3>`;
+      
+      if (section.note) {
+        html += `<p class="section-note">ℹ️ ${section.note}</p>`;
+      }
+
+      // Group events by day
+      const byDay = {};
+      DAY_ORDER.forEach(day => byDay[day] = []);
+      
+      section.events.forEach(event => {
+        if (byDay[event.day]) {
+          byDay[event.day].push(event);
+        }
+      });
+
+      // Render events by day
+      html += '<div class="events-grid">';
+      section.events.forEach(event => {
+        html += renderEvent(event);
+      });
+      html += '</div></div>';
+
+      return html;
+    }
+
+    // Render a single event card
+    function renderEvent(event) {
+      const intensityClass = event.intensity ? `intensity-${event.intensity.toLowerCase()}` : '';
+      
+      let details = '';
+      if (event.location) details += `<span>📍 ${event.location}</span>`;
+      if (event.instructor) details += `<span>👤 ${event.instructor}</span>`;
+      if (event.intensity) details += `<span class="${intensityClass}">⚡ ${event.intensity}</span>`;
+      if (event.lanes) details += `<span>🏊 ${event.lanes}</span>`;
+
+      return `
+        <div class="event-card">
+          <div class="event-day">${event.day}</div>
+          <div class="event-activity">${event.activity}</div>
+          <div class="event-time">🕐 ${event.time}</div>
+          <div class="event-details">${details}</div>
+        </div>
+      `;
+    }
+
+    // Initialize on page load
+    populateSelector();
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+{
+  "schedule": {
+    "season": "Winter 2026",
+    "quarter": "Q1",
+    "start_date": "2026-01-05",
+    "end_date": "2026-03-22",
+    "source": "YMCA Saint-Roch (Québec)",
+    "notes": "The YMCA reserves the right to cancel classes if there are fewer than 10 participants. The instructor may be changed without notice."
+  },
+  "sections": [
+    {
+      "name": "Group lessons - Morning",
+      "events": [
+        { "day": "Monday", "activity": "Aquafit", "time": "09:00 to 09:55", "location": "Pool", "instructor": null, "intensity": "Low" },
+        { "day": "Tuesday", "activity": "HIIT Cycling", "time": "07:00 to 07:45", "location": "Studio 5", "instructor": null, "intensity": null },
+        { "day": "Tuesday", "activity": "Gentle Toning – Ball/BOSU", "time": "09:30 to 10:15", "location": "Studio 5", "instructor": null, "intensity": null },
+        { "day": "Tuesday", "activity": "Zumba®", "time": "10:30 to 11:30", "location": "Studio 2-3", "instructor": "Nicolas", "intensity": "Low" },
+        { "day": "Wednesday", "activity": "Aquafit", "time": "09:00 to 09:55", "location": "Pool", "instructor": null, "intensity": "Low" },
+        { "day": "Wednesday", "activity": "Pilates-Stretching", "time": "10:00 to 11:00", "location": "Studio 2-3", "instructor": "Gabrielle", "intensity": "Low" },
+        { "day": "Thursday", "activity": "Yoga", "time": "07:00 to 08:00", "location": "Studio 2-3", "instructor": "Alain", "intensity": "High" },
+        { "day": "Thursday", "activity": "Gentle Toning", "time": "09:30 to 10:15", "location": "Studio 5", "instructor": null, "intensity": null },
+        { "day": "Thursday", "activity": "Zumba®", "time": "10:30 to 11:30", "location": "Studio 2-3", "instructor": "Nicolas", "intensity": "Low" },
+        { "day": "Friday", "activity": "Aquafit", "time": "10:00 to 10:55", "location": "Pool", "instructor": null, "intensity": "Low" },
+        { "day": "Friday", "activity": "Yoga", "time": "10:30 to 11:30", "location": "Studio 2-3", "instructor": "Anne", "intensity": "Low" },
+        { "day": "Saturday", "activity": "HIIT Cycling", "time": "09:30 to 10:15", "location": "Studio 5", "instructor": "Marie-Andree", "intensity": "High" },
+        { "day": "Saturday", "activity": "Zumba®", "time": "10:00 to 11:00", "location": "Studio 2-3", "instructor": "Julie", "intensity": "Moderate" },
+        { "day": "Sunday", "activity": "HIIT Cycling", "time": "09:30 to 10:15", "location": "Studio 5", "instructor": "Carl", "intensity": "Low" },
+        { "day": "Sunday", "activity": "HIIT Cycling (second)", "time": "09:30 to 10:15", "location": "Studio 5", "instructor": "Alex", "intensity": "High" }
+      ]
+    },
+    {
+      "name": "Group lessons - Midday",
+      "events": [
+        { "day": "Monday", "activity": "Cardio-Box", "time": "12:00 to 13:00", "location": "Studio 1", "instructor": "Amine", "intensity": "High" },
+        { "day": "Monday", "activity": "Core Strength & Abs", "time": "12:00 to 13:00", "location": "Studio 2-3", "instructor": "Nicolas", "intensity": "Moderate" },
+        { "day": "Tuesday", "activity": "Circuit Training", "time": "12:00 to 13:00", "location": "Studio 1", "instructor": "Nicolas", "intensity": "High" },
+        { "day": "Tuesday", "activity": "Yoga", "time": "12:00 to 13:00", "location": "Studio 2-3", "instructor": "Anne", "intensity": "Low" },
+        { "day": "Tuesday", "activity": "Circuit Training", "time": "12:15 to 13:00", "location": "Studio 1 / Track", "instructor": "Francis", "intensity": "High" },
+        { "day": "Wednesday", "activity": "Pilates", "time": "12:00 to 13:00", "location": "Studio 2-3", "instructor": "Gabrielle", "intensity": "Moderate" },
+        { "day": "Wednesday", "activity": "HIIT Cycling", "time": "12:15 to 13:00", "location": "Studio 5", "instructor": "Marie-Christine", "intensity": "High" },
+        { "day": "Thursday", "activity": "HIIT - Toning", "time": "12:00 to 13:00", "location": "Studio 2-3", "instructor": "Nicolas", "intensity": "High" },
+        { "day": "Thursday", "activity": "Circuit Training", "time": "12:00 to 13:00", "location": "Studio 2-3", "instructor": "Nicolas", "intensity": "High" },
+        { "day": "Thursday", "activity": "HIIT Cycling", "time": "12:15 to 13:00", "location": "Studio 5", "instructor": "Jimmy", "intensity": "High" },
+        { "day": "Friday", "activity": "Gentle Floor Toning", "time": "11:00 to 12:00", "location": "Studio 2-3", "instructor": "Nicolas", "intensity": "Low" },
+        { "day": "Friday", "activity": "Gentle Fitness", "time": "13:15 to 14:15", "location": "Studio 2-3", "instructor": "Nicolas", "intensity": "Low" },
+        { "day": "Saturday", "activity": "Aquafit", "time": "12:00 to 12:55", "location": "Pool", "instructor": null, "intensity": "Low" },
+        { "day": "Sunday", "activity": "Aquafit", "time": "12:00 to 12:55", "location": "Pool", "instructor": null, "intensity": "Low" }
+      ]
+    },
+    {
+      "name": "Group lessons - Evening",
+      "events": [
+        { "day": "Monday", "activity": "Pilates", "time": "17:00 to 18:00", "location": "Studio 2-3", "instructor": "Gabrielle", "intensity": "Moderate" },
+        { "day": "Monday", "activity": "HIIT Cycling", "time": "17:30 to 18:15", "location": "Studio 5", "instructor": "Alain", "intensity": "High" },
+        { "day": "Monday", "activity": "Metafit", "time": "17:30 to 18:30", "location": "Studio 1", "instructor": "Jimmy", "intensity": "High" },
+        { "day": "Monday", "activity": "Power Yoga", "time": "18:15 to 19:15", "location": "Studio 2-3", "instructor": "Alice", "intensity": "Moderate" },
+        { "day": "Monday", "activity": "Aquafit", "time": "18:30 to 19:25", "location": "Pool", "instructor": null, "intensity": "Low" },
+        { "day": "Tuesday", "activity": "Zumba®", "time": "17:00 to 18:00", "location": "Studio 2-3", "instructor": "Valerie", "intensity": "Moderate" },
+        { "day": "Tuesday", "activity": "HIIT Cycling", "time": "17:15 to 18:00", "location": "Studio 5", "instructor": "Jimmy", "intensity": "High" },
+        { "day": "Tuesday", "activity": "Bootcamp", "time": "18:15 to 19:15", "location": "Studio 1", "instructor": "Jimmy", "intensity": "High" },
+        { "day": "Tuesday", "activity": "HIIT Cycling", "time": "18:30 to 19:15", "location": "Studio 5", "instructor": "Alex", "intensity": "High" },
+        { "day": "Wednesday", "activity": "Pilates", "time": "17:00 to 18:00", "location": "Studio 2-3", "instructor": "Valerie", "intensity": "Moderate" },
+        { "day": "Wednesday", "activity": "HIIT Cycling", "time": "17:30 to 18:15", "location": "Studio 5", "instructor": "Marie-Christine", "intensity": "High" },
+        { "day": "Wednesday", "activity": "Power Yoga", "time": "18:15 to 19:15", "location": "Studio 2-3", "instructor": "Carl", "intensity": "Moderate" },
+        { "day": "Wednesday", "activity": "Aquafit", "time": "18:30 to 19:25", "location": "Pool", "instructor": null, "intensity": "Low" },
+        { "day": "Wednesday", "activity": "Yin yoga", "time": "19:15 to 20:15", "location": "Studio 2-3", "instructor": "Anne", "intensity": "Low" },
+        { "day": "Thursday", "activity": "HIIT Cycling", "time": "17:15 to 18:00", "location": "Studio 5", "instructor": "Jimmy", "intensity": "High" },
+        { "day": "Thursday", "activity": "Pilates", "time": "17:30 to 18:30", "location": "Studio 2-3", "instructor": "Gabrielle", "intensity": "Moderate" },
+        { "day": "Thursday", "activity": "Total Sculpt", "time": "18:00 to 19:00", "location": "Studio 1", "instructor": "Leonie", "intensity": "High" },
+        { "day": "Thursday", "activity": "HIIT Cycling", "time": "18:30 to 19:15", "location": "Studio 5", "instructor": "Alex", "intensity": "High" },
+        { "day": "Friday", "activity": "Core Strength & Abs", "time": "17:00 to 18:00", "location": "Studio 1", "instructor": "Leonie", "intensity": "Moderate" },
+        { "day": "Friday", "activity": "HIIT Cycling", "time": "17:15 to 18:00", "location": "Studio 5", "instructor": "Marie-Andree", "intensity": "High" },
+        { "day": "Friday", "activity": "Power Yoga", "time": "17:15 to 18:15", "location": "Studio 2-3", "instructor": "Carl", "intensity": "Moderate" }
+      ]
+    },
+    {
+      "name": "Lane swim and open swim - Morning",
+      "note": "Lane Swim (City) sessions have no membership requirement and may be more crowded.",
+      "events": [
+        { "day": "Monday", "activity": "Lane Swim", "time": "07:00 to 08:55", "lanes": "5 swimming lanes" },
+        { "day": "Tuesday", "activity": "Lane Swim", "time": "07:00 to 07:25", "lanes": "5 swimming lanes" },
+        { "day": "Tuesday", "activity": "Lane Swim (City)", "time": "07:25 to 08:55", "lanes": "5 swimming lanes" },
+        { "day": "Wednesday", "activity": "Lane Swim", "time": "07:00 to 08:55", "lanes": "5 swimming lanes" },
+        { "day": "Thursday", "activity": "Lane Swim", "time": "07:00 to 07:25", "lanes": "5 swimming lanes" },
+        { "day": "Thursday", "activity": "Lane Swim (City)", "time": "07:25 to 08:55", "lanes": "5 swimming lanes" },
+        { "day": "Friday", "activity": "Lane Swim", "time": "07:00 to 08:55", "lanes": "5 swimming lanes" },
+        { "day": "Saturday", "activity": "Lane Swim", "time": "07:45 to 08:45", "lanes": "5 swimming lanes" },
+        { "day": "Saturday", "activity": "Lane Swim", "time": "09:00 to 09:55", "lanes": "2 swimming lanes" },
+        { "day": "Saturday", "activity": "Open Swim", "time": "09:00 to 10:55", "lanes": "3 swimming lanes" },
+        { "day": "Sunday", "activity": "Lane Swim", "time": "09:00 to 10:55", "lanes": "2 swimming lanes" },
+        { "day": "Sunday", "activity": "Lane Swim", "time": "09:00 to 09:55", "lanes": "3 swimming lanes" },
+        { "day": "Sunday", "activity": "Open Swim", "time": "09:00 to 10:55", "lanes": "3 swimming lanes" }
+      ]
+    },
+    {
+      "name": "Lane swim and open swim - Midday",
+      "note": "Lane Swim (City) sessions have no membership requirement and may be more crowded.",
+      "events": [
+        { "day": "Monday", "activity": "Lane Swim (City)", "time": "11:00 to 12:55", "lanes": "5 swimming lanes" },
+        { "day": "Tuesday", "activity": "Lane Swim", "time": "11:00 to 12:55", "lanes": "5 swimming lanes" },
+        { "day": "Wednesday", "activity": "Lane Swim (City)", "time": "11:00 to 12:55", "lanes": "5 swimming lanes" },
+        { "day": "Thursday", "activity": "Lane Swim", "time": "11:00 to 12:55", "lanes": "5 swimming lanes" },
+        { "day": "Friday", "activity": "Lane Swim (City)", "time": "11:00 to 12:55", "lanes": "5 swimming lanes" },
+        { "day": "Saturday", "activity": "Lane Swim", "time": "13:00 to 14:25", "lanes": "3 swimming lanes" },
+        { "day": "Sunday", "activity": "Lane Swim", "time": "13:00 to 14:25", "lanes": "3 swimming lanes" }
+      ]
+    },
+    {
+      "name": "Lane swim and open swim - Afternoon",
+      "events": [
+        { "day": "Monday", "activity": "Lane Swim", "time": "16:30 to 18:25", "lanes": "5 swimming lanes" },
+        { "day": "Thursday", "activity": "Lane Swim", "time": "16:30 to 18:25", "lanes": "2 swimming lanes" },
+        { "day": "Saturday", "activity": "Lane Swim", "time": "16:00 to 17:25", "lanes": null },
+        { "day": "Sunday", "activity": "Open Swim (City)", "time": "14:30 to 15:55", "lanes": null }
+      ]
+    },
+    {
+      "name": "Lane swim and open swim - Evening",
+      "events": [
+        { "day": "Monday", "activity": "Lane Swim", "time": "19:30 to 20:55", "lanes": "5 swimming lanes" },
+        { "day": "Tuesday", "activity": "Lane Swim (City)", "time": "19:30 to 20:55", "lanes": "5 swimming lanes" },
+        { "day": "Wednesday", "activity": "Lane Swim", "time": "19:30 to 20:55", "lanes": "2 swimming lanes" },
+        { "day": "Thursday", "activity": "Open Swim (City)", "time": "17:30 to 18:55", "lanes": null }
+      ]
+    }
+  ]
+}
