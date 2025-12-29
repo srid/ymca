@@ -128,7 +128,23 @@
 
     .time-column {
       background: var(--bg-card);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .time-header {
+      background: var(--bg-card);
+      padding: 0.5rem 0.25rem;
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      height: 34px;
+      box-sizing: border-box;
+    }
+
+    .time-labels {
       position: relative;
+      flex: 1;
     }
 
     .time-label {
@@ -141,7 +157,8 @@
 
     .day-column {
       background: var(--bg-secondary);
-      position: relative;
+      display: flex;
+      flex-direction: column;
       min-height: 800px;
     }
 
@@ -152,22 +169,13 @@
       text-align: center;
       font-weight: 600;
       font-size: 0.85rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .time-header {
-      background: var(--bg-card);
-      padding: 0.5rem 0.25rem;
-      text-align: center;
-      font-size: 0.7rem;
-      color: var(--text-secondary);
+      height: 34px;
+      box-sizing: border-box;
     }
 
     .day-events {
       position: relative;
-      height: calc(100% - 34px);
+      flex: 1;
     }
 
     .event-card {
@@ -226,8 +234,10 @@
 
     .event-activity {
       font-weight: 600;
-      margin-bottom: 0.25rem;
       color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .event-time {
@@ -555,12 +565,12 @@
       let html = '<div class="week-grid">';
 
       // Time column with hour labels
-      html += '<div class="time-column"><div class="time-header">Time</div>';
+      html += '<div class="time-column"><div class="time-header">Time</div><div class="time-labels">';
       for (let h = TIMELINE_START; h <= TIMELINE_END; h++) {
         const top = ((h - TIMELINE_START) / TIMELINE_HOURS) * 100;
-        html += `<div class="time-label" style="top: calc(34px + ${top}%)">${h}:00</div>`;
+        html += `<div class="time-label" style="top: ${top}%">${h}:00</div>`;
       }
-      html += '</div>';
+      html += '</div></div>';
 
       // Day columns
       DAY_ORDER.forEach(day => {
@@ -601,16 +611,9 @@
       } else if (name.includes('gentle') || name.includes('toning')) {
         eventType = 'gentle';
       }
-      
       // Calculate position and size
       const top = timeToPosition(event.start);
       const height = getDurationHeight(event.start, event.end);
-      
-      // Short name for compact display
-      let shortName = event.activity;
-      if (shortName.length > 15) {
-        shortName = shortName.slice(0, 14) + '…';
-      }
       
       // Time display with start and end
       const timeDisplay = event.start && event.end ? `${event.start}-${event.end}` : (event.start || '');
@@ -619,7 +622,7 @@
         <div class="event-card ${eventType}" 
              style="top: ${top}%; height: ${height}%;"
              title="${event.activity} ${event.start}-${event.end}${event.location ? ' @ ' + event.location : ''}${event.instructor ? ' with ' + event.instructor : ''}">
-          <div class="event-activity">${shortName}</div>
+          <div class="event-activity">${event.activity}</div>
           <div class="event-time">${timeDisplay}</div>
         </div>
       `;
