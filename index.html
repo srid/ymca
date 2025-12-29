@@ -6,16 +6,17 @@
   <title>YMCA Schedule Viewer</title>
   <style>
     :root {
-      --bg-primary: #0f172a;
-      --bg-secondary: #1e293b;
-      --bg-card: #334155;
-      --text-primary: #f8fafc;
-      --text-secondary: #94a3b8;
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --bg-card: #f1f5f9;
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --border: #e2e8f0;
       --accent-blue: #3b82f6;
       --accent-green: #22c55e;
-      --accent-yellow: #eab308;
-      --accent-red: #ef4444;
-      --accent-purple: #a855f7;
+      --accent-yellow: #ca8a04;
+      --accent-red: #dc2626;
+      --accent-purple: #7c3aed;
     }
 
     * {
@@ -26,197 +27,258 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1a2e 100%);
+      background: var(--bg-primary);
       color: var(--text-primary);
       min-height: 100vh;
-      padding: 2rem;
+      padding: 1.5rem;
     }
 
     h1 {
       text-align: center;
       margin-bottom: 0.5rem;
-      font-size: 2.5rem;
-      background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: 2rem;
+      color: var(--accent-blue);
     }
 
     .subtitle {
       text-align: center;
       color: var(--text-secondary);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
     }
 
-    .schedule-meta {
-      text-align: center;
+    .controls {
       background: var(--bg-secondary);
-      padding: 1rem 2rem;
+      border: 1px solid var(--border);
       border-radius: 12px;
-      margin-bottom: 2rem;
-      max-width: 600px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .schedule-meta h2 {
-      color: var(--accent-blue);
-      margin-bottom: 0.5rem;
-    }
-
-    .schedule-meta p {
+    .controls h3 {
+      font-size: 0.85rem;
       color: var(--text-secondary);
-      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .file-selector {
-      text-align: center;
-      margin-bottom: 2rem;
+    .activity-toggles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
-    .file-selector select {
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: 2px solid var(--accent-blue);
-      background: var(--bg-secondary);
-      color: var(--text-primary);
+    .toggle-btn {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-card);
+      color: var(--text-secondary);
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.15s;
     }
 
-    .file-selector select:hover {
+    .toggle-btn:hover {
+      border-color: var(--accent-blue);
+    }
+
+    .toggle-btn.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: white;
+    }
+
+    .toggle-all-btns {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .toggle-all-btns button {
+      padding: 0.3rem 0.6rem;
+      font-size: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .toggle-all-btns button:hover {
       background: var(--bg-card);
     }
 
-    .section {
-      background: var(--bg-secondary);
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .section h3 {
-      color: var(--accent-purple);
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--bg-card);
-    }
-
-    .section-note {
-      color: var(--accent-yellow);
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      font-style: italic;
-    }
-
-    .events-grid {
+    /* Weekly grid layout */
+    .week-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.75rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .day-column {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: 400px;
+    }
+
+    .day-header {
+      background: var(--accent-blue);
+      color: white;
+      padding: 0.75rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .day-events {
+      padding: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
 
     .event-card {
       background: var(--bg-card);
-      border-radius: 12px;
-      padding: 1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+      border-radius: 8px;
+      padding: 0.6rem;
+      border-left: 3px solid var(--accent-purple);
+      font-size: 0.8rem;
     }
 
-    .event-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    }
-
-    .event-day {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent-blue);
-      margin-bottom: 0.25rem;
+    .event-card.swim {
+      border-left-color: var(--accent-blue);
     }
 
     .event-activity {
-      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
+      color: var(--text-primary);
     }
 
     .event-time {
       color: var(--accent-green);
-      font-size: 0.9rem;
-      margin-bottom: 0.25rem;
+      font-size: 0.75rem;
+      margin-bottom: 0.2rem;
     }
 
     .event-details {
-      font-size: 0.85rem;
+      font-size: 0.7rem;
       color: var(--text-secondary);
     }
 
     .event-details span {
       display: inline-block;
-      margin-right: 0.75rem;
+      margin-right: 0.5rem;
     }
 
     .intensity-high { color: var(--accent-red); }
     .intensity-moderate { color: var(--accent-yellow); }
     .intensity-low { color: var(--accent-green); }
 
-    .loading {
+    .loading, .error {
       text-align: center;
-      color: var(--text-secondary);
       padding: 3rem;
+      color: var(--text-secondary);
     }
 
-    .error {
+    .error { color: var(--accent-red); }
+
+    .file-selector {
       text-align: center;
-      color: var(--accent-red);
-      padding: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .file-selector select {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
       background: var(--bg-secondary);
-      border-radius: 12px;
+      color: var(--text-primary);
+      cursor: pointer;
     }
 
-    /* Day grouping within sections */
-    .day-group {
-      margin-bottom: 1.5rem;
+    @media (max-width: 1200px) {
+      .week-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
-    .day-header {
-      color: var(--accent-blue);
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      padding-left: 0.5rem;
-      border-left: 3px solid var(--accent-blue);
+    @media (max-width: 800px) {
+      .week-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .week-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🏊 YMCA Schedule Viewer</h1>
-  <p class="subtitle">Sanity check for extracted schedule data</p>
+  <h1>🏊 YMCA Schedule</h1>
 
   <div class="file-selector">
     <select id="schedule-select">
-      <option value="">Loading schedules...</option>
+      <option value="">Loading...</option>
     </select>
   </div>
 
-  <div id="schedule-meta" class="schedule-meta" style="display: none;"></div>
+  <div class="controls">
+    <div class="toggle-all-btns">
+      <button onclick="toggleAllActivities(true)">Select All Activities</button>
+      <button onclick="toggleAllActivities(false)">Deselect All</button>
+      <button onclick="resetToDefault()">Reset to Default</button>
+    </div>
+    
+    <h3>Time of Day</h3>
+    <div id="period-toggles" class="activity-toggles" style="margin-bottom: 1rem;"></div>
+    
+    <h3>Filter Activities</h3>
+    <div id="activity-toggles" class="activity-toggles"></div>
+  </div>
+
   <div id="content">
-    <p class="loading">Select a schedule to view...</p>
+    <p class="loading">Select a schedule...</p>
   </div>
 
   <script>
-    // List of available schedule JSON files
-    // Add new schedules here as they're created
-    const SCHEDULE_FILES = [
-      'schedules/2026-q1-group-swim.json'
+    const SCHEDULE_FILES = ['schedules/2026-q1-group-swim.json'];
+    const DAY_ORDER = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    
+    // Activities enabled by default (pilates and lane swim only)
+    const DEFAULT_ENABLED_ACTIVITIES = [
+      'pilates', 'pilates-stretching', 
+      'lane swim', 'lane swim (city)'
     ];
 
-    const DAY_ORDER = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    // Period definitions (based on start time)
+    // Morning: before 10:00, Day: 10:00-18:30, Night: after 18:30
+    const PERIODS = {
+      morning: { label: '🌅 Morning (<10am)', check: (h, m) => h < 10 },
+      day: { label: '☀️ Day (10am-6:30pm)', check: (h, m) => h >= 10 && (h < 18 || (h === 18 && m <= 30)) },
+      night: { label: '🌙 Night (>6:30pm)', check: (h, m) => h > 18 || (h === 18 && m > 30) }
+    };
 
-    // Populate the schedule selector dropdown
+    // Default: only "day" period enabled
+    const DEFAULT_ENABLED_PERIODS = ['day'];
+
+    let currentData = null;
+    let activeActivities = new Set();
+    let activePeriods = new Set();
+    let allActivities = [];
+
     function populateSelector() {
       const select = document.getElementById('schedule-select');
       select.innerHTML = '<option value="">-- Select a schedule --</option>';
@@ -224,118 +286,220 @@
       SCHEDULE_FILES.forEach(file => {
         const option = document.createElement('option');
         option.value = file;
-        // Extract a friendly name from the filename
         const name = file.replace('schedules/', '').replace('.json', '').replace(/-/g, ' ').toUpperCase();
         option.textContent = name;
         select.appendChild(option);
       });
 
       select.addEventListener('change', (e) => {
-        if (e.target.value) {
-          loadSchedule(e.target.value);
-        }
+        if (e.target.value) loadSchedule(e.target.value);
       });
     }
 
-    // Load and display a schedule JSON file
     async function loadSchedule(path) {
       const content = document.getElementById('content');
-      const metaDiv = document.getElementById('schedule-meta');
-      
-      content.innerHTML = '<p class="loading">Loading schedule...</p>';
-      metaDiv.style.display = 'none';
+      content.innerHTML = '<p class="loading">Loading...</p>';
 
       try {
         const response = await fetch(path);
         if (!response.ok) throw new Error(`Failed to load ${path}`);
         
-        const data = await response.json();
-        displaySchedule(data);
+        currentData = await response.json();
+        extractActivities();
+        initializeToggles();
+        renderWeek();
       } catch (error) {
-        content.innerHTML = `<p class="error">Error loading schedule: ${error.message}</p>`;
+        content.innerHTML = `<p class="error">Error: ${error.message}</p>`;
       }
     }
 
-    // Display schedule data
-    function displaySchedule(data) {
-      const content = document.getElementById('content');
-      const metaDiv = document.getElementById('schedule-meta');
-
-      // Display metadata
-      if (data.schedule) {
-        metaDiv.style.display = 'block';
-        metaDiv.innerHTML = `
-          <h2>${data.schedule.season || 'Schedule'}</h2>
-          <p><strong>Source:</strong> ${data.schedule.source || 'N/A'}</p>
-          <p><strong>Dates:</strong> ${data.schedule.start_date} to ${data.schedule.end_date}</p>
-          ${data.schedule.notes ? `<p style="margin-top: 0.5rem; font-style: italic;">${data.schedule.notes}</p>` : ''}
-        `;
-      }
-
-      // Display sections
-      let html = '';
-      if (data.sections && data.sections.length > 0) {
-        data.sections.forEach(section => {
-          html += renderSection(section);
+    // Extract unique activity names from all sections
+    function extractActivities() {
+      const activities = new Set();
+      if (currentData && currentData.sections) {
+        currentData.sections.forEach(section => {
+          section.events.forEach(event => {
+            activities.add(event.activity.toLowerCase());
+          });
         });
-      } else {
-        html = '<p class="error">No sections found in this schedule.</p>';
       }
+      allActivities = Array.from(activities).sort();
+    }
 
+    // Check if an activity should be enabled by default
+    function isDefaultEnabledActivity(activity) {
+      const lower = activity.toLowerCase();
+      return DEFAULT_ENABLED_ACTIVITIES.some(d => lower.includes(d) || d.includes(lower));
+    }
+
+    // Parse time string "HH:MM to HH:MM" and return start hour and minute
+    function parseStartTime(timeStr) {
+      const match = timeStr.match(/^(\d{1,2}):(\d{2})/);
+      if (match) {
+        return { hour: parseInt(match[1], 10), minute: parseInt(match[2], 10) };
+      }
+      return { hour: 12, minute: 0 }; // fallback
+    }
+
+    // Get period for an event based on start time
+    function getEventPeriod(event) {
+      const { hour, minute } = parseStartTime(event.time);
+      for (const [period, def] of Object.entries(PERIODS)) {
+        if (def.check(hour, minute)) return period;
+      }
+      return 'day';
+    }
+
+    // Initialize all toggle buttons
+    function initializeToggles() {
+      // Period toggles
+      const periodContainer = document.getElementById('period-toggles');
+      periodContainer.innerHTML = '';
+      activePeriods.clear();
+
+      Object.entries(PERIODS).forEach(([period, def]) => {
+        const btn = document.createElement('button');
+        btn.className = 'toggle-btn';
+        btn.textContent = def.label;
+        btn.dataset.period = period;
+        
+        if (DEFAULT_ENABLED_PERIODS.includes(period)) {
+          btn.classList.add('active');
+          activePeriods.add(period);
+        }
+
+        btn.addEventListener('click', () => togglePeriod(period, btn));
+        periodContainer.appendChild(btn);
+      });
+
+      // Activity toggles
+      const activityContainer = document.getElementById('activity-toggles');
+      activityContainer.innerHTML = '';
+      activeActivities.clear();
+
+      allActivities.forEach(activity => {
+        const btn = document.createElement('button');
+        btn.className = 'toggle-btn';
+        btn.textContent = activity;
+        btn.dataset.activity = activity;
+        
+        if (isDefaultEnabledActivity(activity)) {
+          btn.classList.add('active');
+          activeActivities.add(activity);
+        }
+
+        btn.addEventListener('click', () => toggleActivity(activity, btn));
+        activityContainer.appendChild(btn);
+      });
+    }
+
+    function togglePeriod(period, btn) {
+      if (activePeriods.has(period)) {
+        activePeriods.delete(period);
+        btn.classList.remove('active');
+      } else {
+        activePeriods.add(period);
+        btn.classList.add('active');
+      }
+      renderWeek();
+    }
+
+    function toggleActivity(activity, btn) {
+      if (activeActivities.has(activity)) {
+        activeActivities.delete(activity);
+        btn.classList.remove('active');
+      } else {
+        activeActivities.add(activity);
+        btn.classList.add('active');
+      }
+      renderWeek();
+    }
+
+    function toggleAllActivities(enable) {
+      const btns = document.querySelectorAll('#activity-toggles .toggle-btn');
+      activeActivities.clear();
+      btns.forEach(btn => {
+        if (enable) {
+          btn.classList.add('active');
+          activeActivities.add(btn.dataset.activity);
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      renderWeek();
+    }
+
+    function resetToDefault() {
+      initializeToggles();
+      renderWeek();
+    }
+
+    // Collect all events for a specific day across all sections
+    function getEventsForDay(day) {
+      const events = [];
+      if (currentData && currentData.sections) {
+        currentData.sections.forEach(section => {
+          section.events.forEach(event => {
+            const activityMatch = activeActivities.has(event.activity.toLowerCase());
+            const periodMatch = activePeriods.has(getEventPeriod(event));
+            
+            if (event.day === day && activityMatch && periodMatch) {
+              events.push({ ...event, section: section.name });
+            }
+          });
+        });
+      }
+      // Sort by time
+      events.sort((a, b) => {
+        const timeA = a.time.split(' to ')[0];
+        const timeB = b.time.split(' to ')[0];
+        return timeA.localeCompare(timeB);
+      });
+      return events;
+    }
+
+    // Render the weekly grid
+    function renderWeek() {
+      const content = document.getElementById('content');
+      let html = '<div class="week-grid">';
+
+      DAY_ORDER.forEach(day => {
+        const events = getEventsForDay(day);
+        html += `
+          <div class="day-column">
+            <div class="day-header">${day}</div>
+            <div class="day-events">
+              ${events.length > 0 ? events.map(renderEvent).join('') : '<p style="color: #94a3b8; font-size: 0.8rem; padding: 0.5rem;">No events</p>'}
+            </div>
+          </div>
+        `;
+      });
+
+      html += '</div>';
       content.innerHTML = html;
     }
 
-    // Render a section with events grouped by day
-    function renderSection(section) {
-      let html = `<div class="section">
-        <h3>${section.name}</h3>`;
-      
-      if (section.note) {
-        html += `<p class="section-note">ℹ️ ${section.note}</p>`;
-      }
-
-      // Group events by day
-      const byDay = {};
-      DAY_ORDER.forEach(day => byDay[day] = []);
-      
-      section.events.forEach(event => {
-        if (byDay[event.day]) {
-          byDay[event.day].push(event);
-        }
-      });
-
-      // Render events by day
-      html += '<div class="events-grid">';
-      section.events.forEach(event => {
-        html += renderEvent(event);
-      });
-      html += '</div></div>';
-
-      return html;
-    }
-
-    // Render a single event card
     function renderEvent(event) {
+      const isSwim = event.activity.toLowerCase().includes('swim') || event.activity.toLowerCase().includes('aquafit');
       const intensityClass = event.intensity ? `intensity-${event.intensity.toLowerCase()}` : '';
       
       let details = '';
-      if (event.location) details += `<span>📍 ${event.location}</span>`;
-      if (event.instructor) details += `<span>👤 ${event.instructor}</span>`;
-      if (event.intensity) details += `<span class="${intensityClass}">⚡ ${event.intensity}</span>`;
-      if (event.lanes) details += `<span>🏊 ${event.lanes}</span>`;
+      if (event.location) details += `<span>📍${event.location}</span>`;
+      if (event.instructor) details += `<span>👤${event.instructor}</span>`;
+      if (event.intensity) details += `<span class="${intensityClass}">${event.intensity}</span>`;
+      if (event.lanes) details += `<span>🏊${event.lanes}</span>`;
 
       return `
-        <div class="event-card">
-          <div class="event-day">${event.day}</div>
+        <div class="event-card ${isSwim ? 'swim' : ''}">
           <div class="event-activity">${event.activity}</div>
-          <div class="event-time">🕐 ${event.time}</div>
-          <div class="event-details">${details}</div>
+          <div class="event-time">${event.time}</div>
+          ${details ? `<div class="event-details">${details}</div>` : ''}
         </div>
       `;
     }
 
-    // Initialize on page load
     populateSelector();
   </script>
 </body>
 </html>
+
