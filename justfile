@@ -5,10 +5,10 @@
 default:
     @just --list
 
-# Extract text from a schedule PDF
-# Usage: just extract schedules/2026-q1-group-swim.pdf
-extract pdf:
-    extract-pdf {{pdf}}
+# Extract schedule data from HTML source to JSON
+# Usage: just extract schedules/2026-q1-group-swim.html
+extract html:
+    python3 scripts/parse_schedule.py {{html}}
 
 # Validate all JSON files in schedules/
 validate:

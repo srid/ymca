@@ -1,2 +1,3 @@
 - Add comments where necessary so a future human can understand all the code in this repo.
 - Use Nix (flake.nix) wherever possible
+- Keep README.md updated, but brief and to the point.
