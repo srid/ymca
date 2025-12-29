@@ -203,6 +203,10 @@
       background: #dbeafe;
       border-left-color: #3b82f6;
     }
+    .event-card.swim-city {
+      background: #e0f2fe;
+      border-left-color: #0ea5e9;
+    }
     .event-card.pilates {
       background: #fae8ff;
       border-left-color: #c026d3;
@@ -242,8 +246,40 @@
 
     .event-time {
       color: var(--accent-green);
-      font-size: 0.75rem;
-      margin-bottom: 0.2rem;
+      font-size: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    /* Lane indicator - small visual blocks */
+    .lane-indicator {
+      display: inline-flex;
+      gap: 1px;
+    }
+    .lane-indicator span {
+      width: 4px;
+      height: 10px;
+      background: #3b82f6;
+      border-radius: 1px;
+    }
+    .swim-city .lane-indicator span {
+      background: #0ea5e9;
+    }
+    
+    .city-badge {
+      font-size: 0.55rem;
+      background: #0ea5e9;
+      color: white;
+      padding: 0 3px;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+    
+    .instructor {
+      color: #64748b;
+      font-style: italic;
     }
 
     .event-details {
@@ -591,11 +627,12 @@
 
     function renderEvent(event) {
       const name = event.activity.toLowerCase();
+      const isCity = name.includes('(city)');
       
       // Determine event type for styling
       let eventType = '';
       if (name.includes('swim') || name.includes('aquafit')) {
-        eventType = 'swim';
+        eventType = isCity ? 'swim-city' : 'swim';
       } else if (name.includes('pilates')) {
         eventType = 'pilates';
       } else if (name.includes('yoga') || name.includes('yin')) {
@@ -611,19 +648,42 @@
       } else if (name.includes('gentle') || name.includes('toning')) {
         eventType = 'gentle';
       }
+      
       // Calculate position and size
       const top = timeToPosition(event.start);
       const height = getDurationHeight(event.start, event.end);
       
-      // Time display with start and end
+      // Time display
       const timeDisplay = event.start && event.end ? `${event.start}-${event.end}` : (event.start || '');
+      
+      // Build extra info HTML
+      let extras = [];
+      
+      // City badge
+      if (isCity) {
+        extras.push('<span class="city-badge">CITY</span>');
+      }
+      
+      // Lane indicator (only show if < 5 lanes)
+      if (event.lanes && event.lanes < 5) {
+        const lanes = '<span></span>'.repeat(event.lanes);
+        extras.push(`<span class="lane-indicator">${lanes}</span>`);
+      }
+      
+      // Instructor
+      if (event.instructor) {
+        extras.push(`<span class="instructor">${event.instructor}</span>`);
+      }
+      
+      // Clean activity name (remove "(City)" suffix)
+      const displayName = event.activity.replace(/\s*\(City\)/i, '');
 
       return `
         <div class="event-card ${eventType}" 
              style="top: ${top}%; height: ${height}%;"
              title="${event.activity} ${event.start}-${event.end}${event.location ? ' @ ' + event.location : ''}${event.instructor ? ' with ' + event.instructor : ''}">
-          <div class="event-activity">${event.activity}</div>
-          <div class="event-time">${timeDisplay}</div>
+          <div class="event-activity">${displayName}</div>
+          <div class="event-time">${timeDisplay}${extras.length ? ' ' + extras.join(' ') : ''}</div>
         </div>
       `;
     }
