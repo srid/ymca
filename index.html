@@ -319,21 +319,62 @@
       cursor: pointer;
     }
 
-    @media (max-width: 1200px) {
+    /* Mobile responsive */
+    @media (max-width: 900px) {
       .week-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 40px repeat(7, minmax(100px, 1fr));
+        overflow-x: auto;
+        min-width: 100%;
+      }
+      
+      .day-column {
+        min-height: 600px;
+        min-width: 100px;
+      }
+      
+      .event-card {
+        font-size: 0.6rem;
+        padding: 0.25rem;
+      }
+      
+      .event-activity {
+        font-size: 0.6rem;
+      }
+      
+      .event-time {
+        font-size: 0.55rem;
+      }
+      
+      .controls {
+        padding: 0.75rem;
+      }
+      
+      .toggle-btn {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.7rem;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
       }
     }
-
-    @media (max-width: 800px) {
-      .week-grid {
-        grid-template-columns: repeat(2, 1fr);
+    
+    @media (max-width: 600px) {
+      body {
+        padding: 0.5rem;
       }
-    }
-
-    @media (max-width: 500px) {
+      
       .week-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 35px repeat(7, minmax(80px, 1fr));
+      }
+      
+      .day-header {
+        font-size: 0.7rem;
+        padding: 0.3rem;
+      }
+      
+      .time-label {
+        font-size: 0.55rem;
       }
     }
   </style>
