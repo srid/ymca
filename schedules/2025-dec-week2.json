@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "season": "Holiday Season 2025 - Week 2",
+    "start_date": "2026-12-29",
+    "end_date": "2026-01-04",
+    "source": "YMCA Saint-Roch (Québec)",
+    "notes": "The YMCA reserves the right to cancel classes if there are fewer than 10 participants. The instructor may be changed without notice. Lane Swim (City) sessions have no membership requirement and may be more crowded."
+  },
+  "events": {
+    "Monday": [
+      {
+        "activity": "Lane Swim",
+        "start": "07:00",
+        "end": "08:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Aquafit",
+        "start": "09:00",
+        "end": "09:55"
+      },
+      {
+        "activity": "Pilates-Stretching",
+        "start": "10:00",
+        "end": "11:00",
+        "location": "Studio 2-3",
+        "instructor": "Gabrielle",
+        "intensity": "low"
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "11:00",
+        "end": "12:25",
+        "lanes": 5
+      },
+      {
+        "activity": "Cardio-Box",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 1",
+        "instructor": "Amine",
+        "intensity": "high"
+      },
+      {
+        "activity": "Core Strength & Abs",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "12:15",
+        "end": "13:00",
+        "location": "Studio 5",
+        "instructor": "Alex",
+        "intensity": "high"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "16:30",
+        "end": "20:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Pilates",
+        "start": "17:00",
+        "end": "18:00",
+        "location": "Studio 2-3",
+        "instructor": "Gabrielle",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "17:30",
+        "end": "18:15",
+        "location": "Studio 5",
+        "instructor": "Sophie",
+        "intensity": "high"
+      },
+      {
+        "activity": "Buti yoga",
+        "start": "18:15",
+        "end": "19:15",
+        "location": "Studio 2-3",
+        "instructor": "Marie",
+        "intensity": "high"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "18:30",
+        "end": "19:15",
+        "location": "Studio 5",
+        "instructor": "Sophie",
+        "intensity": "high"
+      }
+    ],
+    "Tuesday": [
+      {
+        "activity": "Lane Swim",
+        "start": "07:00",
+        "end": "07:25",
+        "lanes": 5
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "07:25",
+        "end": "08:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "09:00",
+        "end": "10:55",
+        "lanes": 2
+      },
+      {
+        "activity": "Open Swim",
+        "start": "09:00",
+        "end": "10:55",
+        "lanes": 3
+      },
+      {
+        "activity": "Gentle Toning – Ball/BOSU",
+        "start": "10:30",
+        "end": "11:30",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "low"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "11:00",
+        "end": "12:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Circuit Training",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "high"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "16:30",
+        "end": "19:25"
+      },
+      {
+        "activity": "Zumba®",
+        "start": "17:00",
+        "end": "18:00",
+        "location": "Studio 2-3",
+        "instructor": "Julie",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "17:15",
+        "end": "18:00",
+        "location": "Studio 5",
+        "instructor": "Alex",
+        "intensity": "high"
+      },
+      {
+        "activity": "Total Sculpt",
+        "start": "18:15",
+        "end": "19:15",
+        "location": "Studio 1",
+        "instructor": "Leonie",
+        "intensity": "high"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "18:30",
+        "end": "19:15",
+        "location": "Studio 5",
+        "instructor": "Alex",
+        "intensity": "high"
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "19:30",
+        "end": "20:55",
+        "lanes": 5
+      }
+    ],
+    "Wednesday": [
+      {
+        "activity": "Lane Swim",
+        "start": "07:00",
+        "end": "08:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Aquafit",
+        "start": "09:00",
+        "end": "09:55"
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "11:00",
+        "end": "12:25",
+        "lanes": 5
+      },
+      {
+        "activity": "Yoga",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 2-3",
+        "instructor": "Anne",
+        "intensity": "low"
+      },
+      {
+        "activity": "Circuit Training",
+        "start": "12:15",
+        "end": "13:00",
+        "location": "Studio 1 / Track",
+        "instructor": "Francis",
+        "intensity": "high"
+      }
+    ],
+    "Thursday": [],
+    "Friday": [
+      {
+        "activity": "Lane Swim",
+        "start": "09:00",
+        "end": "09:55",
+        "lanes": 2
+      },
+      {
+        "activity": "Open Swim",
+        "start": "09:00",
+        "end": "09:55",
+        "lanes": 3
+      },
+      {
+        "activity": "Aquafit",
+        "start": "10:00",
+        "end": "10:55"
+      },
+      {
+        "activity": "Gentle Floor Toning",
+        "start": "11:00",
+        "end": "12:00",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas"
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "11:00",
+        "end": "12:25",
+        "lanes": 5
+      },
+      {
+        "activity": "Circuit Training",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "high"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "12:15",
+        "end": "13:00",
+        "location": "Studio 5",
+        "instructor": "Alex",
+        "intensity": "high"
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "16:00",
+        "end": "17:25",
+        "lanes": 5
+      },
+      {
+        "activity": "Core Strength & Abs",
+        "start": "17:00",
+        "end": "18:00",
+        "location": "Studio 1",
+        "instructor": "Leonie",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "17:15",
+        "end": "18:00",
+        "location": "Studio 5",
+        "instructor": "Cusi",
+        "intensity": "high"
+      },
+      {
+        "activity": "Power Yoga",
+        "start": "17:15",
+        "end": "18:15",
+        "location": "Studio 2-3",
+        "instructor": "Carl",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "Open Swim (City)",
+        "start": "17:30",
+        "end": "18:55"
+      }
+    ],
+    "Saturday": [
+      {
+        "activity": "Lane Swim",
+        "start": "08:30",
+        "end": "11:25",
+        "lanes": 5
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "09:30",
+        "end": "10:15",
+        "location": "Studio 5",
+        "instructor": "Alex",
+        "intensity": "high"
+      },
+      {
+        "activity": "Zumba®",
+        "start": "10:00",
+        "end": "11:00",
+        "location": "Studio 2-3",
+        "instructor": "Julie",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "Aquafit",
+        "start": "12:00",
+        "end": "12:55"
+      },
+      {
+        "activity": "Open Swim",
+        "start": "13:00",
+        "end": "14:25",
+        "lanes": 5
+      }
+    ],
+    "Sunday": [
+      {
+        "activity": "Lane Swim",
+        "start": "08:30",
+        "end": "11:25"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "09:30",
+        "end": "10:15",
+        "location": "Studio 5",
+        "instructor": "Alex",
+        "intensity": "high"
+      },
+      {
+        "activity": "Yoga",
+        "start": "10:30",
+        "end": "11:30",
+        "location": "Studio 2-3",
+        "instructor": "Anne",
+        "intensity": "low"
+      },
+      {
+        "activity": "Aquafit",
+        "start": "12:00",
+        "end": "12:55"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "13:00",
+        "end": "14:25"
+      },
+      {
+        "activity": "Open Swim (City)",
+        "start": "14:30",
+        "end": "16:00"
+      }
+    ]
+  }
+}
