@@ -437,6 +437,7 @@
 
   <script>
     const SCHEDULE_FILES = [
+      'schedules/2026-spring.json',
       'schedules/2026-jan.json',
       'schedules/2025-dec-week2.json'
     ];
@@ -457,7 +458,7 @@
     };
 
     // Default: only "day" period enabled
-    const DEFAULT_ENABLED_PERIODS = ['day'];
+    const DEFAULT_ENABLED_PERIODS = ['morning', 'day'];
 
     let currentData = null;
     let activeActivities = new Set();
@@ -830,15 +831,21 @@
     // Initialize: populate selector and check URL for schedule
     populateSelector();
     
-    // Load schedule from URL hash if present
+    // Load schedule from URL hash, or default to first schedule
     function loadFromHash() {
       const hash = window.location.hash.slice(1); // Remove #
+      let path = null;
       if (hash) {
-        const path = `schedules/${hash}.json`;
-        if (SCHEDULE_FILES.includes(path)) {
-          document.getElementById('schedule-select').value = path;
-          loadSchedule(path);
-        }
+        path = `schedules/${hash}.json`;
+        if (!SCHEDULE_FILES.includes(path)) path = null;
+      }
+      // Default to first schedule if no valid hash
+      if (!path && SCHEDULE_FILES.length > 0) {
+        path = SCHEDULE_FILES[0];
+      }
+      if (path) {
+        document.getElementById('schedule-select').value = path;
+        loadSchedule(path);
       }
     }
     

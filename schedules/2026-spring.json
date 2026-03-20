@@ -1,0 +1,1379 @@
+{
+  "meta": {
+    "season": "Spring 2026",
+    "start_date": "2026-03-23",
+    "end_date": "2026-06-14",
+    "source": "YMCA Saint-Roch (Québec)",
+    "notes": "The YMCA reserves the right to cancel classes if there are fewer than 10 participants. The instructor may be changed without notice. Lane Swim (City) sessions have no membership requirement and may be more crowded."
+  },
+  "events": {
+    "Monday": [
+      {
+        "activity": "Lane Swim",
+        "start": "07:00",
+        "end": "08:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Aquafit",
+        "start": "09:00",
+        "end": "09:55",
+        "intensity": "low"
+      },
+      {
+        "activity": "Pilates-Stretching",
+        "start": "10:00",
+        "end": "11:00",
+        "location": "Studio 2-3",
+        "instructor": "Gabrielle",
+        "intensity": "low"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "10:00",
+        "end": "11:30",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "11:00",
+        "end": "12:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Cardio-Box",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 1",
+        "instructor": "Amine",
+        "intensity": "high"
+      },
+      {
+        "activity": "Core Strength & Abs",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "12:15",
+        "end": "13:00",
+        "location": "Studio 5",
+        "instructor": "Marie-Christine",
+        "intensity": "high"
+      },
+      {
+        "activity": "Gentle Fitness",
+        "start": "13:15",
+        "end": "14:15",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "low"
+      },
+      {
+        "activity": "Basketball",
+        "start": "13:30",
+        "end": "15:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Badminton",
+        "start": "14:30",
+        "end": "15:30",
+        "location": "Gymnase 1"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "16:30",
+        "end": "18:25",
+        "lanes": 5
+      },
+      {
+        "activity": "Pilates",
+        "start": "17:00",
+        "end": "18:00",
+        "location": "Studio 2-3",
+        "instructor": "Gabrielle",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "17:30",
+        "end": "18:15",
+        "location": "Studio 5",
+        "instructor": "Alain",
+        "intensity": "high"
+      },
+      {
+        "activity": "Metafit",
+        "start": "17:30",
+        "end": "18:30",
+        "location": "Studio 1 / Outdoor",
+        "instructor": "Jimmy",
+        "intensity": "high"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "18:00",
+        "end": "19:00",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Power Yoga",
+        "start": "18:15",
+        "end": "19:15",
+        "location": "Studio 2-3",
+        "instructor": "Alexandra",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "Aquafit",
+        "start": "18:30",
+        "end": "19:25",
+        "intensity": "low"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "18:30",
+        "end": "19:15",
+        "location": "Studio 5",
+        "instructor": "Alex",
+        "intensity": "high"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "19:00",
+        "end": "20:00",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "19:30",
+        "end": "20:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Pickleball",
+        "start": "20:00",
+        "end": "21:00",
+        "location": "Gymnase 1 et 2"
+      }
+    ],
+    "Tuesday": [
+      {
+        "activity": "HIIT Cycling",
+        "start": "07:00",
+        "end": "07:45",
+        "location": "Studio 5",
+        "instructor": "Alain",
+        "intensity": "high"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "07:00",
+        "end": "07:25",
+        "lanes": 5
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "07:25",
+        "end": "08:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "09:00",
+        "end": "10:55",
+        "lanes": 2
+      },
+      {
+        "activity": "Open Swim",
+        "start": "09:00",
+        "end": "10:55",
+        "lanes": 3
+      },
+      {
+        "activity": "Badminton",
+        "start": "10:00",
+        "end": "11:30",
+        "location": "Gymnase 1"
+      },
+      {
+        "activity": "Basketball",
+        "start": "10:00",
+        "end": "11:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Gentle Toning – Ball/BOSU",
+        "start": "10:30",
+        "end": "11:30",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "low"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "11:00",
+        "end": "12:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Circuit Training",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 1",
+        "instructor": "Nicolas",
+        "intensity": "high"
+      },
+      {
+        "activity": "Yoga",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 2-3",
+        "instructor": "Anne",
+        "intensity": "low"
+      },
+      {
+        "activity": "Open Gym",
+        "start": "13:30",
+        "end": "15:30",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Preschool – Floaters",
+        "start": "16:30",
+        "end": "17:00"
+      },
+      {
+        "activity": "Preschool – Floaters",
+        "start": "16:30",
+        "end": "17:00"
+      },
+      {
+        "activity": "Preschool – Jumpers",
+        "start": "16:30",
+        "end": "17:00"
+      },
+      {
+        "activity": "Preschool – Surfers",
+        "start": "16:30",
+        "end": "17:00"
+      },
+      {
+        "activity": "Zumba®",
+        "start": "17:00",
+        "end": "18:00",
+        "location": "Studio 2-3",
+        "instructor": "Valerie",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "Preschool with parent – Bubblers",
+        "start": "17:05",
+        "end": "17:35"
+      },
+      {
+        "activity": "Preschool – Bobbers",
+        "start": "17:05",
+        "end": "17:35"
+      },
+      {
+        "activity": "Preschool – Divers",
+        "start": "17:05",
+        "end": "17:35"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "17:15",
+        "end": "18:00",
+        "location": "Studio 5",
+        "instructor": "Jimmy",
+        "intensity": "high"
+      },
+      {
+        "activity": "Learn to Swim – Dolphin",
+        "start": "17:40",
+        "end": "18:25"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "17:40",
+        "end": "18:25"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "17:40",
+        "end": "18:25"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "17:40",
+        "end": "18:25"
+      },
+      {
+        "activity": "Learn to Swim – Seal",
+        "start": "17:40",
+        "end": "18:25"
+      },
+      {
+        "activity": "Total Sculpt",
+        "start": "18:15",
+        "end": "19:15",
+        "location": "Studio 1",
+        "instructor": "Jimmy",
+        "intensity": "high"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "18:30",
+        "end": "19:15",
+        "location": "Studio 5",
+        "instructor": "Alex",
+        "intensity": "high"
+      },
+      {
+        "activity": "Learn to Swim – Seal",
+        "start": "18:30",
+        "end": "19:15"
+      },
+      {
+        "activity": "Star Program - Star 1",
+        "start": "18:30",
+        "end": "19:15"
+      },
+      {
+        "activity": "Star Program - Star 2",
+        "start": "18:30",
+        "end": "19:15"
+      },
+      {
+        "activity": "Star Program - Star 3",
+        "start": "18:30",
+        "end": "19:15"
+      },
+      {
+        "activity": "Star Program - Star 4",
+        "start": "18:30",
+        "end": "19:15"
+      },
+      {
+        "activity": "Basketball",
+        "start": "18:30",
+        "end": "21:00",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Yin yoga",
+        "start": "19:15",
+        "end": "20:15",
+        "location": "Studio 2-3",
+        "instructor": "Anne",
+        "intensity": "low"
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "19:30",
+        "end": "20:55",
+        "lanes": 5
+      }
+    ],
+    "Wednesday": [
+      {
+        "activity": "Lane Swim",
+        "start": "07:00",
+        "end": "08:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Aquafit",
+        "start": "09:00",
+        "end": "09:55",
+        "intensity": "low"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "10:00",
+        "end": "10:30",
+        "lanes": 1
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "10:00",
+        "end": "10:30",
+        "lanes": 1
+      },
+      {
+        "activity": "Pickleball",
+        "start": "10:00",
+        "end": "11:30",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "10:30",
+        "end": "11:00",
+        "lanes": 1
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "10:30",
+        "end": "11:00",
+        "lanes": 1
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "11:00",
+        "end": "12:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Pilates",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 2-3",
+        "instructor": "Gabrielle",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "Circuit Training",
+        "start": "12:15",
+        "end": "13:00",
+        "location": "Studio 1 / Track",
+        "instructor": "Francis",
+        "intensity": "high"
+      },
+      {
+        "activity": "Basketball",
+        "start": "13:30",
+        "end": "15:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Open Gym",
+        "start": "13:30",
+        "end": "15:30",
+        "location": "Gymnase 1"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "16:30",
+        "end": "17:00",
+        "lanes": 3
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "16:30",
+        "end": "17:00",
+        "lanes": 3
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "16:30",
+        "end": "18:25",
+        "lanes": 2
+      },
+      {
+        "activity": "Pilates",
+        "start": "17:00",
+        "end": "18:00",
+        "location": "Studio 2-3",
+        "instructor": "Valerie",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "17:00",
+        "end": "17:30",
+        "lanes": 3
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "17:00",
+        "end": "17:30",
+        "lanes": 3
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "17:30",
+        "end": "18:15",
+        "location": "Studio 5",
+        "instructor": "Marie-Christine",
+        "intensity": "high"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "17:30",
+        "end": "18:00",
+        "lanes": 3
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "17:30",
+        "end": "18:00",
+        "lanes": 3
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "18:00",
+        "end": "18:30",
+        "lanes": 3
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "18:00",
+        "end": "18:30",
+        "lanes": 3
+      },
+      {
+        "activity": "Power Yoga",
+        "start": "18:15",
+        "end": "19:15",
+        "location": "Studio 2-3",
+        "instructor": "Alice",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "Aquafit",
+        "start": "18:30",
+        "end": "19:25",
+        "intensity": "low"
+      },
+      {
+        "activity": "Badminton",
+        "start": "18:30",
+        "end": "19:30",
+        "location": "Gymnase 1"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "18:30",
+        "end": "19:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Adult Swim Lessons - Level 1",
+        "start": "19:30",
+        "end": "20:15"
+      },
+      {
+        "activity": "Adult Swim Lessons - Level 2",
+        "start": "19:30",
+        "end": "20:15"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "19:30",
+        "end": "20:55",
+        "lanes": 2
+      },
+      {
+        "activity": "Badminton",
+        "start": "19:30",
+        "end": "20:30",
+        "location": "Gymnase 1"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "19:30",
+        "end": "20:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Open Gym",
+        "start": "20:00",
+        "end": "21:30",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "20:30",
+        "end": "21:00",
+        "location": "Gymnase 2"
+      }
+    ],
+    "Thursday": [
+      {
+        "activity": "Yoga",
+        "start": "07:00",
+        "end": "08:00",
+        "location": "Studio 2-3",
+        "instructor": "Carl",
+        "intensity": "low"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "07:00",
+        "end": "07:25",
+        "lanes": 5
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "07:25",
+        "end": "08:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Preschool with parent – Splashers",
+        "start": "09:30",
+        "end": "10:00"
+      },
+      {
+        "activity": "Badminton",
+        "start": "10:00",
+        "end": "11:30",
+        "location": "Gymnase 1"
+      },
+      {
+        "activity": "Basketball",
+        "start": "10:00",
+        "end": "11:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Adult Swim Lessons - Level 1",
+        "start": "10:05",
+        "end": "10:50"
+      },
+      {
+        "activity": "Gentle Toning",
+        "start": "10:30",
+        "end": "11:30",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "low"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "11:00",
+        "end": "12:55",
+        "lanes": 5
+      },
+      {
+        "activity": "HIIT - Toning",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "high"
+      },
+      {
+        "activity": "Open Gym",
+        "start": "13:30",
+        "end": "16:00",
+        "location": "Gymnase 1"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "13:30",
+        "end": "14:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "14:30",
+        "end": "15:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Preschool with parent – Bubblers",
+        "start": "16:30",
+        "end": "17:00"
+      },
+      {
+        "activity": "Preschool – Floaters",
+        "start": "16:30",
+        "end": "17:00"
+      },
+      {
+        "activity": "Pilates",
+        "start": "17:00",
+        "end": "18:00",
+        "location": "Studio 2-3",
+        "instructor": "Gabrielle",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "Preschool – Bobbers",
+        "start": "17:05",
+        "end": "17:35"
+      },
+      {
+        "activity": "Preschool – Floaters",
+        "start": "17:05",
+        "end": "17:35"
+      },
+      {
+        "activity": "Preschool – Gliders",
+        "start": "17:05",
+        "end": "17:35"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "17:15",
+        "end": "18:00",
+        "location": "Studio 5",
+        "instructor": "Jimmy",
+        "intensity": "high"
+      },
+      {
+        "activity": "Preschool – Bobbers",
+        "start": "17:40",
+        "end": "18:10"
+      },
+      {
+        "activity": "Preschool – Floaters",
+        "start": "17:40",
+        "end": "18:10"
+      },
+      {
+        "activity": "Preschool – Gliders",
+        "start": "17:40",
+        "end": "18:10"
+      },
+      {
+        "activity": "Bootcamp",
+        "start": "18:00",
+        "end": "19:00",
+        "location": "Studio 1",
+        "instructor": "Leonie",
+        "intensity": "high"
+      },
+      {
+        "activity": "Zumba®",
+        "start": "18:15",
+        "end": "19:15",
+        "location": "Studio 2-3",
+        "instructor": "Julie",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "18:15",
+        "end": "19:00"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "18:15",
+        "end": "19:00"
+      },
+      {
+        "activity": "Learn to Swim – Seal",
+        "start": "18:15",
+        "end": "19:00"
+      },
+      {
+        "activity": "Learn to Swim – Swimmer",
+        "start": "18:15",
+        "end": "19:00"
+      },
+      {
+        "activity": "Adult Swim Lessons - Level 1",
+        "start": "19:05",
+        "end": "19:50"
+      },
+      {
+        "activity": "Adult Swim Lessons - Level 2",
+        "start": "19:05",
+        "end": "19:50"
+      },
+      {
+        "activity": "Adult Swim Lessons - Level 3",
+        "start": "19:05",
+        "end": "19:50"
+      },
+      {
+        "activity": "Adult Swim Lessons - Level 1",
+        "start": "19:55",
+        "end": "20:40"
+      },
+      {
+        "activity": "Adult Swim Lessons - Level 2",
+        "start": "19:55",
+        "end": "20:40"
+      },
+      {
+        "activity": "Adult Swim Lessons - Level 3",
+        "start": "19:55",
+        "end": "20:40"
+      },
+      {
+        "activity": "Basketball",
+        "start": "20:00",
+        "end": "21:30",
+        "location": "Gymnase 1 et 2"
+      }
+    ],
+    "Friday": [
+      {
+        "activity": "Lane Swim",
+        "start": "07:00",
+        "end": "08:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "09:00",
+        "end": "09:55",
+        "lanes": 2
+      },
+      {
+        "activity": "Open Swim",
+        "start": "09:00",
+        "end": "09:55",
+        "lanes": 3
+      },
+      {
+        "activity": "Aquafit",
+        "start": "10:00",
+        "end": "10:55",
+        "intensity": "low"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "10:00",
+        "end": "11:00",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Gentle Floor Toning",
+        "start": "11:00",
+        "end": "12:00",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "low"
+      },
+      {
+        "activity": "Lane Swim (City)",
+        "start": "11:00",
+        "end": "12:55",
+        "lanes": 5
+      },
+      {
+        "activity": "Pickleball",
+        "start": "11:00",
+        "end": "12:00",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Circuit Training",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Studio 2-3",
+        "instructor": "Nicolas",
+        "intensity": "high"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "12:00",
+        "end": "13:00",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "12:15",
+        "end": "13:00",
+        "location": "Studio 5",
+        "instructor": "Jimmy",
+        "intensity": "high"
+      },
+      {
+        "activity": "Open Gym",
+        "start": "13:30",
+        "end": "15:00",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Badminton",
+        "start": "15:30",
+        "end": "16:30"
+      },
+      {
+        "activity": "Open Gym",
+        "start": "15:30",
+        "end": "17:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "16:00",
+        "end": "17:25",
+        "lanes": 5
+      },
+      {
+        "activity": "Badminton",
+        "start": "16:30",
+        "end": "17:30",
+        "location": "Gymnase 1"
+      },
+      {
+        "activity": "Core Strength & Abs",
+        "start": "17:00",
+        "end": "18:00",
+        "location": "Studio 1",
+        "instructor": "Leonie",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "17:15",
+        "end": "18:00",
+        "location": "Studio 5",
+        "instructor": "Marie-Andree",
+        "intensity": "high"
+      },
+      {
+        "activity": "Power Yoga",
+        "start": "17:15",
+        "end": "18:15",
+        "location": "Studio 2-3",
+        "instructor": "Carl",
+        "intensity": "moderate"
+      },
+      {
+        "activity": "Open Swim (City)",
+        "start": "17:30",
+        "end": "18:55"
+      },
+      {
+        "activity": "Open Gym",
+        "start": "18:00",
+        "end": "21:30",
+        "location": "Gymnase 1"
+      },
+      {
+        "activity": "Basketball",
+        "start": "19:00",
+        "end": "21:00",
+        "location": "Gymnase 1"
+      }
+    ],
+    "Saturday": [
+      {
+        "activity": "Lane Swim",
+        "start": "07:45",
+        "end": "08:45",
+        "lanes": 5
+      },
+      {
+        "activity": "Preschool with parent – Splashers",
+        "start": "09:00",
+        "end": "09:30"
+      },
+      {
+        "activity": "Preschool – Bobbers",
+        "start": "09:00",
+        "end": "09:30"
+      },
+      {
+        "activity": "Preschool – Floaters",
+        "start": "09:00",
+        "end": "09:30"
+      },
+      {
+        "activity": "Preschool – Floaters",
+        "start": "09:00",
+        "end": "09:30"
+      },
+      {
+        "activity": "Introduction to sports",
+        "start": "09:00",
+        "end": "09:45",
+        "location": "Gymnasium 1"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "09:30",
+        "end": "10:15",
+        "location": "Studio 5",
+        "instructor": "Marie-Andree",
+        "intensity": "high"
+      },
+      {
+        "activity": "Preschool with parent – Bubblers",
+        "start": "09:35",
+        "end": "10:05"
+      },
+      {
+        "activity": "Preschool – Bobbers",
+        "start": "09:35",
+        "end": "10:05"
+      },
+      {
+        "activity": "Preschool – Floaters",
+        "start": "09:35",
+        "end": "10:05"
+      },
+      {
+        "activity": "Preschool – Jumpers",
+        "start": "09:35",
+        "end": "10:05"
+      },
+      {
+        "activity": "Preschool – Surfers",
+        "start": "09:35",
+        "end": "10:05"
+      },
+      {
+        "activity": "Basketball 9–11 years – Level 1",
+        "start": "09:50",
+        "end": "10:45"
+      },
+      {
+        "activity": "Introduction to sports",
+        "start": "09:50",
+        "end": "10:35",
+        "location": "Gymnasium 1"
+      },
+      {
+        "activity": "Learn to Swim – Dolphin",
+        "start": "10:10",
+        "end": "10:55"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "10:10",
+        "end": "10:55"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "10:10",
+        "end": "10:55"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "10:10",
+        "end": "10:55"
+      },
+      {
+        "activity": "Learn to Swim – Seal",
+        "start": "10:10",
+        "end": "10:55"
+      },
+      {
+        "activity": "Introduction to sports",
+        "start": "10:40",
+        "end": "11:25",
+        "location": "Gymnasium 1"
+      },
+      {
+        "activity": "Basketball 6–8 years – Level 1",
+        "start": "10:50",
+        "end": "11:45"
+      },
+      {
+        "activity": "Learn to Swim – Dolphin",
+        "start": "11:00",
+        "end": "11:45"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "11:00",
+        "end": "11:45"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "11:00",
+        "end": "11:45"
+      },
+      {
+        "activity": "Learn to Swim – Seal",
+        "start": "11:00",
+        "end": "11:45"
+      },
+      {
+        "activity": "Learn to Swim – Swimmer",
+        "start": "11:00",
+        "end": "11:45"
+      },
+      {
+        "activity": "Introduction to sports",
+        "start": "11:30",
+        "end": "12:15",
+        "location": "Gymnasium 1"
+      },
+      {
+        "activity": "Soccer 9–11 years – Level 1",
+        "start": "11:35",
+        "end": "12:30",
+        "location": "Gymnasium 1"
+      },
+      {
+        "activity": "Aquafit",
+        "start": "12:00",
+        "end": "12:55",
+        "intensity": "low"
+      },
+      {
+        "activity": "Pickleball",
+        "start": "12:30",
+        "end": "13:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "13:00",
+        "end": "13:30",
+        "lanes": 2
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "13:00",
+        "end": "13:30",
+        "lanes": 2
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "13:00",
+        "end": "14:25",
+        "lanes": 3
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "13:30",
+        "end": "14:00",
+        "lanes": 2
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "13:30",
+        "end": "14:00",
+        "lanes": 2
+      },
+      {
+        "activity": "Pickleball",
+        "start": "13:30",
+        "end": "14:30",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "14:00",
+        "end": "14:30",
+        "lanes": 2
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "14:00",
+        "end": "14:30",
+        "lanes": 2
+      },
+      {
+        "activity": "Basketball",
+        "start": "15:00",
+        "end": "18:30",
+        "location": "Gymnase 1 et 2"
+      }
+    ],
+    "Sunday": [
+      {
+        "activity": "Private swim lessons for all",
+        "start": "09:00",
+        "end": "09:30",
+        "lanes": 1
+      },
+      {
+        "activity": "Preschool with parent – Splashers",
+        "start": "09:00",
+        "end": "09:30"
+      },
+      {
+        "activity": "Preschool – Bobbers",
+        "start": "09:00",
+        "end": "09:30"
+      },
+      {
+        "activity": "Preschool – Divers",
+        "start": "09:00",
+        "end": "09:30"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "09:00",
+        "end": "09:30",
+        "lanes": 1
+      },
+      {
+        "activity": "Open Gym – Ages 3 +",
+        "start": "09:00",
+        "end": "12:00",
+        "location": "Gymnase 2"
+      },
+      {
+        "activity": "Introduction to soccer 3-5 years old",
+        "start": "09:00",
+        "end": "09:45",
+        "location": "Gymnasium 1"
+      },
+      {
+        "activity": "HIIT Cycling",
+        "start": "09:30",
+        "end": "10:15",
+        "location": "Studio 5",
+        "instructor": "Alex",
+        "intensity": "high"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "09:30",
+        "end": "10:00",
+        "lanes": 1
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "09:30",
+        "end": "10:00",
+        "lanes": 1
+      },
+      {
+        "activity": "Preschool with parent – Bubblers",
+        "start": "09:35",
+        "end": "10:05"
+      },
+      {
+        "activity": "Preschool – Floaters",
+        "start": "09:35",
+        "end": "10:05"
+      },
+      {
+        "activity": "Preschool – Gliders",
+        "start": "09:35",
+        "end": "10:05"
+      },
+      {
+        "activity": "Introduction to soccer 3-5 years old",
+        "start": "09:50",
+        "end": "10:35",
+        "location": "Gymnasium 1"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "10:00",
+        "end": "10:30",
+        "lanes": 1
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "10:00",
+        "end": "10:30",
+        "lanes": 1
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "10:10",
+        "end": "10:55"
+      },
+      {
+        "activity": "Learn to Swim – Otter",
+        "start": "10:10",
+        "end": "10:55"
+      },
+      {
+        "activity": "Learn to Swim – Seal",
+        "start": "10:10",
+        "end": "10:55"
+      },
+      {
+        "activity": "Learn to Swim – Swimmer",
+        "start": "10:10",
+        "end": "10:55"
+      },
+      {
+        "activity": "Yoga",
+        "start": "10:30",
+        "end": "11:30",
+        "location": "Studio 2-3",
+        "instructor": "Anne",
+        "intensity": "low"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "10:30",
+        "end": "11:00",
+        "lanes": 1
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "10:30",
+        "end": "11:00",
+        "lanes": 1
+      },
+      {
+        "activity": "Soccer 6–8 years – Level 2",
+        "start": "10:40",
+        "end": "11:35",
+        "location": "Gymnasium 1"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "11:00",
+        "end": "11:30",
+        "lanes": 1
+      },
+      {
+        "activity": "Learn to Swim – Dolphin",
+        "start": "11:00",
+        "end": "11:45"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "11:00",
+        "end": "11:30",
+        "lanes": 1
+      },
+      {
+        "activity": "Star Program - Star 1",
+        "start": "11:00",
+        "end": "11:45"
+      },
+      {
+        "activity": "Star Program - Star 2",
+        "start": "11:00",
+        "end": "11:45"
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "11:30",
+        "end": "12:00",
+        "lanes": 1
+      },
+      {
+        "activity": "Private swim lessons for all",
+        "start": "11:30",
+        "end": "12:00",
+        "lanes": 1
+      },
+      {
+        "activity": "Soccer 6–8 years – Level 1",
+        "start": "11:40",
+        "end": "12:35",
+        "location": "Gymnasium 1"
+      },
+      {
+        "activity": "Aquafit",
+        "start": "12:00",
+        "end": "12:55",
+        "intensity": "low"
+      },
+      {
+        "activity": "Open Gym",
+        "start": "12:30",
+        "end": "18:30",
+        "location": "Gymnase 1 et 2"
+      },
+      {
+        "activity": "Lane Swim",
+        "start": "13:00",
+        "end": "14:25",
+        "lanes": 3
+      },
+      {
+        "activity": "Open Swim (City)",
+        "start": "14:30",
+        "end": "15:55"
+      }
+    ]
+  }
+}
